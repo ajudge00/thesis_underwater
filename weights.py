@@ -1,16 +1,19 @@
+import cv2
 import numpy as np
 
 
 def laplacian_contrast_weight(img: np.ndarray):
-    pass
+    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    return np.abs(cv2.Laplacian(img_gray, cv2.CV_32F, ksize=3))
 
 
 def saliency_weight(img: np.ndarray):
-    pass
+    return img
 
 
 def saturation_weight(img: np.ndarray):
-    pass
+    return img
 
 
 def weights_merged(img: np.ndarray):
@@ -22,4 +25,4 @@ def weights_merged(img: np.ndarray):
     :param img:
     :return:
     """
-    pass
+    return img
